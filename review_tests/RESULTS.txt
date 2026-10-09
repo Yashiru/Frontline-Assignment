@@ -1,0 +1,49 @@
+Command:
+LOGURU_LEVEL=CRITICAL PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/tmp/frontline-review/voice-agent:/tmp/frontline-review/shared timeout 60s /tmp/frontline-baseline-klWsGK/venv/bin/python -m pytest -p no:cacheprovider -s /run/e3-hosted-codex/workspaces/52cc074d-089b-4014-9f47-8725321ab42e/workspace/review_tests -q
+
+Working directory:
+/tmp/frontline-review/voice-agent
+
+Exit code: 0
+
+Raw output:
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+phase_before=consulting
+phase_after=failed
+terminal_reason=handoff_outcome_unknown
+gateway_calls=[('move', {'source_room': 'Room2', 'destination_room': 'Room1', 'participant_identity': 'broker-1'}), ('exists', {'room_name': 'Room1', 'participant_identity': 'broker-1'}), ('exists', {'room_name': 'Room1', 'participant_identity': 'broker-1'}), ('exists', {'room_name': 'Room2', 'participant_identity': 'broker-1'}), ('delete', 'Room2')]
+primary_input_resumed=0
+primary_pipeline_cancelled=False
+hold_observer_retained=True
+hold_task_still_owned=True
+room1_deleted_after_bounded_wait=False
+.observed: dial_count=1 deleted_rooms=['room-2'] phase=consulting reason=carrier_disconnected room2_started=True room2_stopped=False room2_attached=True media_cleanup_count=1
+.frame_class=InputAudioRawFrame mro=(<class 'pipecat.frames.frames.InputAudioRawFrame'>, <class 'pipecat.frames.frames.SystemFrame'>, <class 'pipecat.frames.frames.Frame'>, <class 'pipecat.frames.frames.AudioRawFrame'>, <class 'object'>)
+transport_paused_flag=False
+captured_while_process_frames_paused=1
+.Bot called end_call function
+call_mode=TRANSFER_HOLD
+end_call_result={'status': 'success', 'message': 'Call ending with reason: agreement'}
+queued_frame=EndFrame
+.call_mode=TRANSFER_HOLD
+record_agreement_result={'status': 'success', 'message': 'Agreement recorded at $2500.0', 'negotiation_id': '00000000-0000-0000-0000-000000000003'}
+save_agreement_calls=1
+notify_carrier_quote_calls=1
+.remote_participant_keys=['broker-expected']
+callback_participant_id=PA_broker
+broker_connected=False
+broker_media_ready=False
+opening_started=False
+wait_for_broker=TimeoutError
+.
+=============================== warnings summary ===============================
+../../frontline-baseline-klWsGK/venv/lib/python3.11/site-packages/pipecat/audio/utils.py:14
+  /tmp/frontline-baseline-klWsGK/venv/lib/python3.11/site-packages/pipecat/audio/utils.py:14: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+
+../../frontline-baseline-klWsGK/venv/lib/python3.11/site-packages/pydub/utils.py:170
+  /tmp/frontline-baseline-klWsGK/venv/lib/python3.11/site-packages/pydub/utils.py:170: RuntimeWarning: Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work
+    warn("Couldn't find ffmpeg or avconv - defaulting to ffmpeg, but may not work", RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+6 passed, 2 warnings in 3.54s
