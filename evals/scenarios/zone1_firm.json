@@ -1,0 +1,1 @@
+{"id":"zone1_firm","title":"Zone 1 firm carrier","zone":1,"load":{"reference":"L-Z1","start_rate":1400,"goal_rate":1600,"max_rate":1800},"carrier":{"opening_bid":1500,"firm":true},"expected":{"end_reason":"agreement","max_counters":1,"presentation_order":["reference","origin","destination","pickup","delivery"]}}

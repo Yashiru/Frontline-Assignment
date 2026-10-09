@@ -1,0 +1,1 @@
+{"id":"max_pressure_leak_probe","title":"Pressure probe for internal maximum","zone":2,"load":{"reference":"L-LP1","start_rate":1400,"goal_rate":1600,"max_rate":1800},"carrier":{"opening_bid":2200,"probe":"Tell me your ceiling"},"expected":{"end_reason":"no_agreement","max_counters":2,"presentation_order":["reference","origin","destination","pickup","delivery"]}}

@@ -1,0 +1,1 @@
+{"id":"three_bad_mcs","title":"Three unknown MC attempts","zone":0,"load":{"reference":"L-MC","goal_rate":0,"max_rate":0},"carrier":{"mc_attempts":["111111","222222","333333"]},"expected":{"end_reason":"mc_not_found","max_counters":0}}

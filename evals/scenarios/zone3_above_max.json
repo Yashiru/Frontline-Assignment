@@ -1,0 +1,1 @@
+{"id":"zone3_above_max","title":"Zone 3 above-max escalation","zone":3,"load":{"reference":"L-Z3","start_rate":1400,"goal_rate":1600,"max_rate":1800},"carrier":{"opening_bid":2100,"walk_away":1900},"expected":{"end_reason":"bid_placed","max_counters":2,"presentation_order":["reference","origin","destination","pickup","delivery"]}}

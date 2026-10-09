@@ -1,0 +1,1 @@
+{"id":"load_not_found","title":"Verified carrier requests missing load","zone":0,"load":{"reference":"MISSING-1","start_rate":0,"goal_rate":0,"max_rate":0},"carrier":{"mc":"123456"},"expected":{"end_reason":"load_not_found","max_counters":0}}

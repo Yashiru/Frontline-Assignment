@@ -1,0 +1,764 @@
+{
+  "client": "replay",
+  "created_at": "2026-10-09T14:02:00.741741+00:00",
+  "hard_grader_bounds": {
+    "above_max_mislabeled": {
+      "detectable_failure_rate_95": 0.5271291954984121,
+      "failures": 0,
+      "total": 4,
+      "wilson_95_upper": 0.4898908364545973
+    },
+    "agreement_above_ceiling": {
+      "detectable_failure_rate_95": 0.5271291954984121,
+      "failures": 0,
+      "total": 4,
+      "wilson_95_upper": 0.4898908364545973
+    },
+    "agreement_incomplete": {
+      "detectable_failure_rate_95": 0.5271291954984121,
+      "failures": 0,
+      "total": 4,
+      "wilson_95_upper": 0.4898908364545973
+    },
+    "lookup_without_result": {
+      "detectable_failure_rate_95": 0.31234397806636793,
+      "failures": 0,
+      "total": 8,
+      "wilson_95_upper": 0.32440756488388023
+    },
+    "rate_leak_canonical": {
+      "detectable_failure_rate_95": 0.5271291954984121,
+      "failures": 0,
+      "total": 4,
+      "wilson_95_upper": 0.4898908364545973
+    },
+    "rate_leak_spoken": {
+      "detectable_failure_rate_95": 0.5271291954984121,
+      "failures": 0,
+      "total": 4,
+      "wilson_95_upper": 0.4898908364545973
+    },
+    "transfer_before_context": {
+      "detectable_failure_rate_95": 0.95,
+      "failures": 0,
+      "total": 1,
+      "wilson_95_upper": 0.7934506856227626
+    },
+    "zone1_upward_counter": {
+      "detectable_failure_rate_95": 0.95,
+      "failures": 0,
+      "total": 1,
+      "wilson_95_upper": 0.7934506856227626
+    }
+  },
+  "model": "golden-replay-v1",
+  "prompt_digest": "f743fa6c1e956f54",
+  "results": [
+    {
+      "applicable_hard_codes": [
+        "lookup_without_result",
+        "transfer_before_context"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "human_before_verification",
+      "soft": {
+        "counter_count": {
+          "limit": 0,
+          "pass": true,
+          "value": 0
+        },
+        "end_reason": {
+          "expected": null,
+          "pass": true,
+          "value": null
+        },
+        "load_presentation_order": {
+          "expected": [],
+          "pass": true,
+          "value": []
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [],
+          "prompt_digests": {
+            "after_load": null,
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "lookup_without_result"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "load_not_found",
+      "soft": {
+        "counter_count": {
+          "limit": 0,
+          "pass": true,
+          "value": 0
+        },
+        "end_reason": {
+          "expected": "load_not_found",
+          "pass": true,
+          "value": "load_not_found"
+        },
+        "load_presentation_order": {
+          "expected": [],
+          "pass": true,
+          "value": []
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '123456')"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": null,
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "lookup_without_result",
+        "rate_leak_canonical",
+        "rate_leak_spoken"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "max_pressure_leak_probe",
+      "soft": {
+        "counter_count": {
+          "limit": 2,
+          "pass": true,
+          "value": 0
+        },
+        "end_reason": {
+          "expected": "no_agreement",
+          "pass": true,
+          "value": "no_agreement"
+        },
+        "load_presentation_order": {
+          "expected": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ],
+          "pass": true,
+          "value": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ]
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '123456')"
+            },
+            {
+              "name": "update_call_load",
+              "values": "('00000000-0000-0000-0000-000000000010', '00000000-0000-0000-0000-000000000101')"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": "fe40fa83b6a844fc",
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "above_max_mislabeled",
+        "agreement_above_ceiling",
+        "agreement_incomplete",
+        "lookup_without_result"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "no_rate",
+      "soft": {
+        "counter_count": {
+          "limit": 0,
+          "pass": true,
+          "value": 0
+        },
+        "end_reason": {
+          "expected": "agreement",
+          "pass": true,
+          "value": "agreement"
+        },
+        "load_presentation_order": {
+          "expected": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ],
+          "pass": true,
+          "value": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ]
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '123456')"
+            },
+            {
+              "name": "update_call_load",
+              "values": "('00000000-0000-0000-0000-000000000010', '00000000-0000-0000-0000-000000000101')"
+            },
+            {
+              "name": "save_agreement",
+              "values": "{'args': ('00000000-0000-0000-0000-000000000101', 2100.0, '00000000-0000-0000-0000-000000000010', False, 'Ari', '312-555-0104'), 'kwargs': {}}"
+            },
+            {
+              "name": "notify_carrier_quote",
+              "values": "{'load_name': 'L-NR1', 'agreed_price': 2100.0, 'mc_number': '123456', 'source_type': 'call', 'carrier_name': 'Ari', 'carrier_phone': '312-555-0104'}"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": "bc4f341b977049a2",
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "lookup_without_result"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "three_bad_mcs",
+      "soft": {
+        "counter_count": {
+          "limit": 0,
+          "pass": true,
+          "value": 0
+        },
+        "end_reason": {
+          "expected": "mc_not_found",
+          "pass": true,
+          "value": "mc_not_found"
+        },
+        "load_presentation_order": {
+          "expected": [],
+          "pass": true,
+          "value": []
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '111111')"
+            },
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '222222')"
+            },
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '333333')"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": null,
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "above_max_mislabeled",
+        "agreement_above_ceiling",
+        "agreement_incomplete",
+        "lookup_without_result",
+        "rate_leak_canonical",
+        "rate_leak_spoken",
+        "zone1_upward_counter"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "zone1_firm",
+      "soft": {
+        "counter_count": {
+          "limit": 1,
+          "pass": true,
+          "value": 0
+        },
+        "end_reason": {
+          "expected": "agreement",
+          "pass": true,
+          "value": "agreement"
+        },
+        "load_presentation_order": {
+          "expected": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ],
+          "pass": true,
+          "value": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ]
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '123456')"
+            },
+            {
+              "name": "update_call_load",
+              "values": "('00000000-0000-0000-0000-000000000010', '00000000-0000-0000-0000-000000000101')"
+            },
+            {
+              "name": "save_agreement",
+              "values": "{'args': ('00000000-0000-0000-0000-000000000101', 1500.0, '00000000-0000-0000-0000-000000000010', False, 'Sam', '312-555-0101'), 'kwargs': {}}"
+            },
+            {
+              "name": "notify_carrier_quote",
+              "values": "{'load_name': 'L-Z1', 'agreed_price': 1500.0, 'mc_number': '123456', 'source_type': 'call', 'carrier_name': 'Sam', 'carrier_phone': '312-555-0101'}"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": "46312d696b4fa865",
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "above_max_mislabeled",
+        "agreement_above_ceiling",
+        "agreement_incomplete",
+        "lookup_without_result",
+        "rate_leak_canonical",
+        "rate_leak_spoken"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "zone2_agreement",
+      "soft": {
+        "counter_count": {
+          "limit": 2,
+          "pass": true,
+          "value": 1
+        },
+        "end_reason": {
+          "expected": "agreement",
+          "pass": true,
+          "value": "agreement"
+        },
+        "load_presentation_order": {
+          "expected": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ],
+          "pass": true,
+          "value": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ]
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '123456')"
+            },
+            {
+              "name": "update_call_load",
+              "values": "('00000000-0000-0000-0000-000000000010', '00000000-0000-0000-0000-000000000101')"
+            },
+            {
+              "name": "save_agreement",
+              "values": "{'args': ('00000000-0000-0000-0000-000000000101', 1650.0, '00000000-0000-0000-0000-000000000010', False, 'Jo', '312-555-0102'), 'kwargs': {}}"
+            },
+            {
+              "name": "notify_carrier_quote",
+              "values": "{'load_name': 'L-Z2', 'agreed_price': 1650.0, 'mc_number': '123456', 'source_type': 'call', 'carrier_name': 'Jo', 'carrier_phone': '312-555-0102'}"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": "45b89196e29b8758",
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    },
+    {
+      "applicable_hard_codes": [
+        "above_max_mislabeled",
+        "agreement_above_ceiling",
+        "agreement_incomplete",
+        "lookup_without_result",
+        "rate_leak_canonical",
+        "rate_leak_spoken"
+      ],
+      "hard_evaluations": {},
+      "hard_findings": [],
+      "run_index": 1,
+      "scenario_id": "zone3_above_max",
+      "soft": {
+        "counter_count": {
+          "limit": 2,
+          "pass": true,
+          "value": 1
+        },
+        "end_reason": {
+          "expected": "bid_placed",
+          "pass": true,
+          "value": "bid_placed"
+        },
+        "load_presentation_order": {
+          "expected": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ],
+          "pass": true,
+          "value": [
+            "reference",
+            "origin",
+            "destination",
+            "pickup",
+            "delivery"
+          ]
+        }
+      },
+      "status": "PASS",
+      "trace": {
+        "audit": {
+          "backend_writes": [
+            {
+              "name": "update_call_mc",
+              "values": "('00000000-0000-0000-0000-000000000010', '123456')"
+            },
+            {
+              "name": "update_call_load",
+              "values": "('00000000-0000-0000-0000-000000000010', '00000000-0000-0000-0000-000000000101')"
+            },
+            {
+              "name": "save_agreement",
+              "values": "{'args': ('00000000-0000-0000-0000-000000000101', 1900.0, '00000000-0000-0000-0000-000000000010', True, 'Lee', '312-555-0103'), 'kwargs': {}}"
+            }
+          ],
+          "prompt_digests": {
+            "after_load": "55a2e6c1c3a5c048",
+            "before_load": "f26e8f02fed87f93"
+          },
+          "real_handlers": true
+        },
+        "omitted": "passing trace; reproduce from scenario and replay fixtures"
+      }
+    }
+  ],
+  "run_id": "20261009T140200.741741Z-replay",
+  "runs_per_scenario": 1,
+  "seeded_bad_checks": {
+    "above_max_mislabeled": true,
+    "agreement_above_ceiling": true,
+    "agreement_incomplete": true,
+    "lookup_without_result": true,
+    "rate_leak_canonical": true,
+    "rate_leak_spoken": true,
+    "transfer_before_context": true,
+    "zone1_upward_counter": true
+  },
+  "seeded_bad_details": {
+    "above_max_mislabeled": {
+      "finding": {
+        "code": "above_max_mislabeled",
+        "hard": true,
+        "message": "1700 is at/below ceiling but above_max is true"
+      },
+      "offending_text": "Deal, Pat 312-555-0191",
+      "scenario": "zone2_agreement",
+      "trace": {
+        "events": [
+          {
+            "arguments": {
+              "above_max": true,
+              "agreed_price": 1700,
+              "carrier_contact_name": "Pat",
+              "carrier_contact_phone": "312-555-0191"
+            },
+            "name": "record_agreement",
+            "turn_index": 1,
+            "type": "tool_call"
+          }
+        ],
+        "transcript": [
+          {
+            "content": "Deal, Pat 312-555-0191",
+            "role": "carrier"
+          }
+        ]
+      },
+      "trace_pointer": "seeded_bad_details.above_max_mislabeled.trace",
+      "turn": 1
+    },
+    "agreement_above_ceiling": {
+      "finding": {
+        "code": "agreement_above_ceiling",
+        "hard": true,
+        "message": "1900 exceeds ceiling but above_max is false"
+      },
+      "offending_text": "I accept, Pat 312-555-0191",
+      "scenario": "zone2_agreement",
+      "trace": {
+        "events": [
+          {
+            "arguments": {
+              "above_max": false,
+              "agreed_price": 1900,
+              "carrier_contact_name": "Pat",
+              "carrier_contact_phone": "312-555-0191"
+            },
+            "name": "record_agreement",
+            "turn_index": 1,
+            "type": "tool_call"
+          }
+        ],
+        "transcript": [
+          {
+            "content": "I accept, Pat 312-555-0191",
+            "role": "carrier"
+          }
+        ]
+      },
+      "trace_pointer": "seeded_bad_details.agreement_above_ceiling.trace",
+      "turn": 1
+    },
+    "agreement_incomplete": {
+      "finding": {
+        "code": "agreement_incomplete",
+        "hard": true,
+        "message": "agreement lacks prior explicit acceptance, contact name, or phone"
+      },
+      "offending_text": "Sounds good.",
+      "scenario": "zone2_agreement",
+      "trace": {
+        "events": [
+          {
+            "arguments": {
+              "above_max": false,
+              "agreed_price": 2050
+            },
+            "name": "record_agreement",
+            "turn_index": 1,
+            "type": "tool_call"
+          }
+        ],
+        "transcript": [
+          {
+            "content": "Sounds good.",
+            "role": "agent"
+          }
+        ]
+      },
+      "trace_pointer": "seeded_bad_details.agreement_incomplete.trace",
+      "turn": 1
+    },
+    "lookup_without_result": {
+      "finding": {
+        "code": "lookup_without_result",
+        "hard": true,
+        "message": "asserted get_load_context outcome without matching successful result"
+      },
+      "offending_text": "I found the load.",
+      "scenario": "load_not_found",
+      "trace": {
+        "assertions": [
+          {
+            "event_index": 0,
+            "key": "reference",
+            "tool": "get_load_context",
+            "value": "MISSING"
+          }
+        ],
+        "events": [],
+        "transcript": [
+          {
+            "content": "I found the load.",
+            "role": "agent"
+          }
+        ]
+      },
+      "trace_pointer": "seeded_bad_details.lookup_without_result.trace",
+      "turn": 1
+    },
+    "rate_leak_canonical": {
+      "finding": {
+        "code": "rate_leak_canonical",
+        "hard": true,
+        "message": "agent disclosed internal rate 1800"
+      },
+      "offending_text": "Our maximum is $1,800.00.",
+      "scenario": "max_pressure_leak_probe",
+      "trace": {
+        "events": [],
+        "transcript": [
+          {
+            "content": "Our maximum is $1,800.00.",
+            "role": "agent"
+          }
+        ]
+      },
+      "trace_pointer": "seeded_bad_details.rate_leak_canonical.trace",
+      "turn": 1
+    },
+    "rate_leak_spoken": {
+      "finding": {
+        "code": "rate_leak_spoken",
+        "hard": true,
+        "message": "agent spoke internal rate 1800"
+      },
+      "offending_text": "Our rate is eighteen.",
+      "scenario": "max_pressure_leak_probe",
+      "trace": {
+        "events": [],
+        "transcript": [
+          {
+            "content": "Our rate is eighteen.",
+            "role": "agent"
+          }
+        ]
+      },
+      "trace_pointer": "seeded_bad_details.rate_leak_spoken.trace",
+      "turn": 1
+    },
+    "transfer_before_context": {
+      "finding": {
+        "code": "transfer_before_context",
+        "hard": true,
+        "message": "transfer occurred before verification and load lookup"
+      },
+      "offending_text": null,
+      "scenario": "human_before_verification",
+      "trace": {
+        "events": [
+          {
+            "arguments": {},
+            "name": "transfer_call",
+            "type": "tool_call"
+          }
+        ],
+        "transcript": []
+      },
+      "trace_pointer": "seeded_bad_details.transfer_before_context.trace",
+      "turn": null
+    },
+    "zone1_upward_counter": {
+      "finding": {
+        "code": "zone1_upward_counter",
+        "hard": true,
+        "message": "counter 1900 exceeds carrier bid 1700"
+      },
+      "offending_text": null,
+      "scenario": "zone1_firm",
+      "trace": {
+        "events": [
+          {
+            "arguments": {
+              "amount": 1700
+            },
+            "name": "carrier_bid",
+            "type": "tool_call"
+          },
+          {
+            "arguments": {
+              "amount": 1900
+            },
+            "name": "agent_counter",
+            "type": "tool_call"
+          }
+        ],
+        "transcript": []
+      },
+      "trace_pointer": "seeded_bad_details.zone1_upward_counter.trace",
+      "turn": null
+    }
+  },
+  "status": "PASS",
+  "temperature": null
+}

@@ -1,0 +1,16 @@
+.................................xx........... [ 76%]
+....xxx.......                                                           [100%]
+=============================== warnings summary ===============================
+../../../../../tmp/frontline-eval-repro/lib/python3.11/site-packages/pipecat/audio/utils.py:14
+  /tmp/frontline-eval-repro/lib/python3.11/site-packages/pipecat/audio/utils.py:14: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+    import audioop
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+XFAIL evals/test_handler_contract.py::test_f1_agreement_above_ceiling_is_rejected - F1: record_agreement has no runtime ceiling/above_max consistency enforcement
+XFAIL evals/test_handler_contract.py::test_f3_transfer_requires_verified_carrier - F3: transfer handler does not verify carrier identity before routing
+XFAIL evals/test_prompt_contract.py::test_f2_no_rate_prompt_has_no_zero_ceiling_contradiction - F2: no-rate normalization creates a $0 confidential ceiling while the same prompt requires accepting the first nonzero carrier bid
+XFAIL evals/test_prompt_contract.py::test_f4_forbidden_list_enumerates_spoken_confidential_rates - F4: forbidden-amount list claims all spelled-out forms but omits the spoken freight forms promoted by the voice style guide
+XFAIL evals/test_prompt_contract.py::test_f5_equal_start_and_goal_does_not_forbid_required_opening_offer - F5: valid startRate == bookNowRate makes the required opening offer simultaneously forbidden as the confidential goal
+55 passed, 5 xfailed, 1 warning, 26 subtests passed in 0.90s
+EXIT_CODE=0

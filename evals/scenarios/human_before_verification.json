@@ -1,0 +1,1 @@
+{"id":"human_before_verification","title":"Human request before verification","zone":0,"load":{"reference":"L-HUM","goal_rate":0,"max_rate":0},"carrier":{"request_human":true},"expected":{"end_reason":null,"max_counters":0}}

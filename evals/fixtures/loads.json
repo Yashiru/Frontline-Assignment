@@ -1,0 +1,40 @@
+{
+  "priced": {
+    "id": "00000000-0000-0000-0000-000000000101",
+    "load_id": "LOAD-PRICED",
+    "origin_location": "Atlanta, GA",
+    "destination_location": "Chicago, IL",
+    "broker_initial_offer": 1400,
+    "broker_target_rate": 1600,
+    "broker_max_rate": 1800
+  },
+  "no_rate": {
+    "id": "00000000-0000-0000-0000-000000000102",
+    "load_id": "LOAD-NORATE",
+    "origin_location": "Dallas, TX",
+    "destination_location": "Phoenix, AZ",
+    "broker_initial_offer": null,
+    "broker_target_rate": null,
+    "broker_max_rate": null
+  },
+  "special_instructions": {
+    "id": "00000000-0000-0000-0000-000000000103",
+    "load_id": "LOAD-SPECIAL",
+    "origin_location": "Memphis, TN",
+    "destination_location": "Nashville, TN",
+    "broker_initial_offer": 1400,
+    "broker_target_rate": 1600,
+    "broker_max_rate": 1800,
+    "requirements": "DRIVER MUST CALL BEFORE ARRIVAL",
+    "tracker_required": true
+  },
+  "comma_rates": {
+    "id": "00000000-0000-0000-0000-000000000104",
+    "load_id": "LOAD-COMMA",
+    "origin_location": "Boston, MA",
+    "destination_location": "Albany, NY",
+    "broker_initial_offer": "1,400",
+    "broker_target_rate": "1,600",
+    "broker_max_rate": "1,800"
+  }
+}

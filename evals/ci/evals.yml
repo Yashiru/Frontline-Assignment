@@ -1,0 +1,32 @@
+name: Voice agent evaluations
+
+on:
+  pull_request:
+    paths:
+      - "voice-agent/**"
+      - "shared/**"
+      - "evals/**"
+      - "evals/ci/evals.yml"
+      - "scripts/setup_eval_env.sh"
+      - "evals/requirements*"
+
+permissions:
+  contents: read
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Create isolated evaluation environment
+        run: scripts/setup_eval_env.sh /tmp/frontline-eval
+      - name: Run deterministic contracts
+        run: /tmp/frontline-eval/bin/python -m pytest evals/ -q -rxX
+      - name: Run real-handler replays
+        run: /tmp/frontline-eval/bin/python -m evals.run --client replay
+      - name: Prove prompt mutation detection
+        run: /tmp/frontline-eval/bin/python evals/mutation_check.py

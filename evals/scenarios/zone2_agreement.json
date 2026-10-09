@@ -1,0 +1,1 @@
+{"id":"zone2_agreement","title":"Zone 2 negotiated agreement","zone":2,"load":{"reference":"L-Z2","start_rate":1400,"goal_rate":1600,"max_rate":1800},"carrier":{"opening_bid":1750,"walk_away":1650},"expected":{"end_reason":"agreement","max_counters":2,"presentation_order":["reference","origin","destination","pickup","delivery"]}}

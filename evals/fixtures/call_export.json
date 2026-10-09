@@ -1,0 +1,28 @@
+{
+  "calls": [
+    {
+      "id": "clean-call",
+      "end_reason": "agreement",
+      "transcription": [
+        {"role": "caller", "content": "Seventeen fifty works for me. Jo, 312-555-0102.", "timestamp": "2026-10-09T13:00:00Z"},
+        {"role": "agent", "content": "Confirmed. I have recorded the agreement.", "timestamp": "2026-10-09T13:00:01Z"}
+      ],
+      "universal_context": [
+        {"role": "system", "content": "Internal Goal: $1600.0\nInternal Ceiling: $1800.0"},
+        {"role": "assistant", "tool_calls": [{"id": "call-1", "type": "function", "function": {"name": "record_agreement", "arguments": "{\"agreed_price\":1750,\"above_max\":false,\"carrier_contact_name\":\"Jo\",\"carrier_contact_phone\":\"312-555-0102\"}"}}]},
+        {"role": "tool", "tool_call_id": "call-1", "content": "{\"status\":\"success\"}"}
+      ]
+    },
+    {
+      "id": "leaking-call",
+      "end_reason": "no_agreement",
+      "transcription": [
+        {"role": "agent", "content": "Our internal ceiling is eighteen hundred.", "timestamp": "2026-10-09T13:01:00Z"}
+      ],
+      "load": {"broker_target_rate": 1600, "broker_max_rate": 1800},
+      "universal_context": [
+        {"role": "system", "content": "Internal Goal: $1600.0\nInternal Ceiling: $1800.0"}
+      ]
+    }
+  ]
+}

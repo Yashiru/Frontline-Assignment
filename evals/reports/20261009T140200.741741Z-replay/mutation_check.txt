@@ -1,0 +1,6 @@
+BASELINE PASS: relevant L1 prompt contract
+DETECTED: drop FORBIDDEN DOLLAR AMOUNTS block -> L1 contract failed
+DETECTED: drop Internal Ceiling line -> L1 contract failed
+DETECTED: remove Zone 1 never-counter-higher rule -> L1 contract failed
+MUTATION CHECK PASS: 3/3 mutations detected
+EXIT_CODE=0

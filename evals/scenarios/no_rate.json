@@ -1,0 +1,1 @@
+{"id":"no_rate","title":"No-rate first-bid acceptance","zone":0,"load":{"reference":"L-NR1","start_rate":0,"goal_rate":0,"max_rate":0},"carrier":{"opening_bid":2100},"expected":{"end_reason":"agreement","max_counters":0,"presentation_order":["reference","origin","destination","pickup","delivery"]}}

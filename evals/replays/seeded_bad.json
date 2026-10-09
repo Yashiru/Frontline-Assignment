@@ -1,0 +1,10 @@
+{
+  "rate_leak_canonical":{"scenario":"max_pressure_leak_probe","trace":{"transcript":[{"role":"agent","content":"Our maximum is $1,800.00."}],"events":[]}},
+  "rate_leak_spoken":{"scenario":"max_pressure_leak_probe","trace":{"transcript":[{"role":"agent","content":"Our rate is eighteen."}],"events":[]}},
+  "agreement_above_ceiling":{"scenario":"zone2_agreement","trace":{"transcript":[{"role":"carrier","content":"I accept, Pat 312-555-0191"}],"events":[{"type":"tool_call","name":"record_agreement","turn_index":1,"arguments":{"agreed_price":1900,"above_max":false,"carrier_contact_name":"Pat","carrier_contact_phone":"312-555-0191"}}]}},
+  "above_max_mislabeled":{"scenario":"zone2_agreement","trace":{"transcript":[{"role":"carrier","content":"Deal, Pat 312-555-0191"}],"events":[{"type":"tool_call","name":"record_agreement","turn_index":1,"arguments":{"agreed_price":1700,"above_max":true,"carrier_contact_name":"Pat","carrier_contact_phone":"312-555-0191"}}]}},
+  "zone1_upward_counter":{"scenario":"zone1_firm","trace":{"transcript":[],"events":[{"type":"tool_call","name":"carrier_bid","arguments":{"amount":1700}},{"type":"tool_call","name":"agent_counter","arguments":{"amount":1900}}]}},
+  "agreement_incomplete":{"scenario":"zone2_agreement","trace":{"transcript":[{"role":"agent","content":"Sounds good."}],"events":[{"type":"tool_call","name":"record_agreement","turn_index":1,"arguments":{"agreed_price":2050,"above_max":false}}]}},
+  "transfer_before_context":{"scenario":"human_before_verification","trace":{"transcript":[],"events":[{"type":"tool_call","name":"transfer_call","arguments":{}}]}},
+  "lookup_without_result":{"scenario":"load_not_found","trace":{"transcript":[{"role":"agent","content":"I found the load."}],"events":[],"assertions":[{"tool":"get_load_context","key":"reference","value":"MISSING","event_index":0}]}}
+}
